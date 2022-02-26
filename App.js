@@ -1,22 +1,17 @@
 import * as React from "react";
-import { View, Text } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import HomeScreen from "./src/HomeScreen";
 import ComponentsScreen from "./src/ComponentsScreen";
+import ListScreen from "./src/screens/ListScreen";
 
 const Stack = createNativeStackNavigator();
 
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen
-          name="Home"
-          component={ComponentsScreen}
-          options={{ title: "Overview" }}
-        />
-        <Stack.Screen name="Main" component={HomeScreen} />
+      <Stack.Navigator initialRouteName="List">
+        <Stack.Screen name="List" component={ListScreen} />
+        <Stack.Screen name="Main" component={ComponentsScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
