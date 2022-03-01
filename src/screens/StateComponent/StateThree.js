@@ -10,15 +10,25 @@ const SquareScreen = () => {
   const [blue, setBlue] = useState(0);
 
   const setColor = (color, change) => {
-    // color is goin to be equal to 'red', 'green', 'blue' 
+    // color is goin to be equal to 'red', 'green', 'blue'
     // change === +15, - 15
 
-    if(color === 'red'){
-        if(red + change > 255 || red + change < 0){
-            return;
-        } else{
-            setRed(red + change)
-        }
+    switch (color) {
+      case "red":
+        red + change > 255 || red + change < 0 ? null : setRed(red + change);
+        return;
+      case "green":
+        green + change > 255 || green + change < 0
+          ? null
+          : setGreen(green + change);
+        return;
+      case "blue":
+        blue + change > 255 || blue + change < 0
+          ? null
+          : setBlue(blue + change);
+        return;
+      default:
+        return;
     }
   };
 
@@ -27,24 +37,25 @@ const SquareScreen = () => {
       <ColorCounter
         onIncrease={() => setColor("red", COLOR_INCREMENT)}
         // onIncrease={() => setRed(red + COLOR_INCREMENT)}
-        onDrecrease={() => setColor('red', -1 * COLOR_INCREMENT)}
+        onDrecrease={() => setColor("red", -1 * COLOR_INCREMENT)}
         // onDrecrease={() => setRed(red - COLOR_INCREMENT)}
         color="Red"
       />
       <ColorCounter
         color="Blue"
-        onIncrease={() => setBlue(blue + COLOR_INCREMENT)}
-        onDrecrease={() => setBlue(blue - COLOR_INCREMENT)}
+        onIncrease={() => setColor("blue", COLOR_INCREMENT)}
+        onDrecrease={() => setColor("blue", -1 * COLOR_INCREMENT)}
       />
       <ColorCounter
         color="Green"
-        onIncrease={() => setGreen(green + COLOR_INCREMENT)}
-        onDrecrease={() => setGreen(green - COLOR_INCREMENT)}
+        onIncrease={() => setColor("green", COLOR_INCREMENT)}
+        onDrecrease={() => setColor("green", -1 * COLOR_INCREMENT)}
       />
       <View
         style={{
           height: 150,
           width: 150,
+          top: 20,
           backgroundColor: `rgb(${red}, ${green}, ${blue} )`,
         }}
       />
