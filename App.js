@@ -9,7 +9,11 @@ import CounterScreen from "./src/screens/StateComponent/StateOne";
 import ColorScreen from "./src/screens/StateComponent/StateTwo";
 import SquareScreen from "./src/screens/StateComponent/StateThree";
 import TextScreen from "./src/screens/StateComponent/StateFour";
-
+import BoxScreen from "./src/screens/Layouts/BoxScreen";
+import FlexBoxScreen from "./src/screens/Layouts/FlexBoxScreen";
+import FlexValues from "./src/screens/Layouts/FlexValues";
+import FillObject from "./src/screens/Layouts/FillObject";
+import Exercise from "./src/screens/Layouts/Exercise";
 
 const Stack = createNativeStackNavigator();
 
@@ -25,6 +29,11 @@ function App() {
         <Stack.Screen name="StateTwo" component={ColorScreen} />
         <Stack.Screen name="StateThree" component={SquareScreen} />
         <Stack.Screen name="StateFour" component={TextScreen} />
+        <Stack.Screen name="BoxScreen" component={BoxScreen} />
+        <Stack.Screen name="FlexBoxScreen" component={FlexBoxScreen} />
+        <Stack.Screen name="FlexValuesScreen" component={FlexValues} />
+        <Stack.Screen name="FlexValuesFillScreen" component={FillObject} />
+        <Stack.Screen name="LayoutExercise" component={Exercise} />
       </Stack.Navigator>
     </NavigationContainer>
   );

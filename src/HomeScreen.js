@@ -33,6 +33,26 @@ const HomeScreen = ({ navigation }) => {
         title="Go to State Four Text Input Demo"
         onPress={() => navigation.navigate("StateFour")}
       />
+      <Button
+        title="Go to Box Screen Demo"
+        onPress={() => navigation.navigate("BoxScreen")}
+      />
+      <Button
+        title="Go to FlexBox Screen Demo"
+        onPress={() => navigation.navigate("FlexBoxScreen")}
+      />
+      <Button
+        title="Go to FlexValues Screen Demo"
+        onPress={() => navigation.navigate("FlexValuesScreen")}
+      />
+      <Button
+        title="Go to FillObject Screen Demo"
+        onPress={() => navigation.navigate("FlexValuesFillScreen")}
+      />
+      <Button
+        title="Go to Layout Exercise"
+        onPress={() => navigation.navigate("LayoutExercise")}
+      />
       {/* <TouchableOpacity
         style={styles.touchable}
         onPress={() => navigation.navigate("List")}
